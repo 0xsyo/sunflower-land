@@ -19,6 +19,6 @@ Dokumen ini menyajikan gambaran umum mengenai **Sunflower Land Auto Bot V100.2**
 
 Untuk informasi lebih lanjut mengenai **Sunflower Land Auto Bot V100.2** dan proses akuisisi, silakan kunjungi tautan produk kami di Shopee:
 
-👉 [**Link Produk di Shopee**]([https://shopee.co.id/](https://shopee.co.id/product/1226220068/56210728348/) )
+👉 [**Link Produk di Shopee**](https://shopee.co.id/product/1226220068/56210728348/) )
 
 Kami berkomitmen untuk menyediakan solusi yang efisien dan andal untuk pengalaman bermain Sunflower Land Anda. Terima kasih atas perhatian Anda.
