@@ -1,19 +1,110 @@
-# Sunflower Land Auto Bot - Precognition Phased Engine
+# 🌻 Sunflower Land Auto Bot
 
 Dokumen ini menyajikan gambaran umum mengenai **Sunflower Land Auto Bot**, sebuah solusi otomatisasi yang dirancang untuk mengoptimalkan pengelolaan pertanian virtual Anda di Sunflower Land. Bot ini dikembangkan untuk meningkatkan efisiensi operasional dan memaksimalkan progres dalam permainan melalui serangkaian fitur cerdas dan terotomatisasi.
 
 ![Screenshot Operasional Bot](18.05.2026_15.36.26_REC.png)
 
-## Fitur Utama:
+---
 
-*   **Precognition Phased Engine)**: Mengintegrasikan algoritma prediktif untuk mengantisipasi kebutuhan pertanian dan mengoptimalkan strategi pengelolaan sumber daya secara proaktif. Ini memastikan alokasi sumber daya yang efisien dan respons adaptif terhadap dinamika permainan.
-*   **Smart Farming & Delivery Planner**: Sistem perencanaan cerdas yang menganalisis kondisi pertanian untuk menentukan penanaman optimal dan mengelola rantai pasokan untuk pesanan pengiriman. Fitur ini memastikan ketersediaan stok dan pemenuhan pesanan yang tepat waktu.
-*   **Dukungan Multi-Wallet**: Memungkinkan pengelolaan simultan beberapa akun Sunflower Land. Integrasi token bearer yang aman memfasilitasi operasi yang efisien di seluruh portofolio akun Anda.
-*   **Otomatisasi Klaim Reward**: Mengotomatiskan proses klaim hadiah harian, pencapaian (achievements), dan Salt Awakening, memastikan bahwa semua bonus dan insentif dalam game tidak terlewatkan.
-*   **Ekspansi Lahan Otomatis**: Secara proaktif memantau dan menginisiasi proses ekspansi lahan ketika kondisi memungkinkan, mendukung pertumbuhan pertanian dan peningkatan kapasitas produksi.
-*   **Manajemen Inventaris Adaptif**: Mengelola inventaris alat dan benih secara cerdas, termasuk pembelian dan penjualan item, untuk menjaga ketersediaan sumber daya yang optimal sesuai kebutuhan operasional.
-*   **Simulasi Interaksi Humanis**: Mengimplementasikan jeda waktu acak antar aksi untuk meniru pola perilaku pengguna manusia, meningkatkan keamanan dan mengurangi risiko deteksi otomatisasi.
-*   **Antarmuka Konsol Informatif**: Menyediakan tampilan konsol berwarna yang dirancang untuk keterbacaan optimal, memudahkan pemantauan status operasional dan informasi penting.
+## ✨ Core Automation
+
+### 🌾 Smart Farming
+- Auto harvest & plant dengan prioritas berdasarkan misi delivery aktif
+- Lock system: crop tidak dijual jika dibutuhkan untuk misi, masak, atau composter
+- Adaptive planting: memilih bibit terbaik berdasarkan stok & kebutuhan
+- Batch processing untuk hindari request spam
+
+### 🛒 Seed Management
+- Auto beli bibit saat stok dibawah threshold
+- Prioritas pembelian mengikuti misi yang sedang aktif
+- Shipment restock gratis saat stok server habis
+
+### 🍳 Kitchen Automation
+- Auto masak resep yang dibutuhkan misi (prioritas) atau XP
+- Auto collect hasil masakan & feed bumpkin
+- Bahan masak tidak diambil jika sedang di-lock untuk misi
+
+### 🧫 Composter
+- Auto build, start, collect, dan speed up (gems opsional)
+- Collect + start dalam 1 autosave cycle
+- Level 7+ requirement
+
+---
+
+## 🏆 Claim & Rewards
+
+### ⭐ Skills & Achievements
+- Auto klaim 32+ skill tier 1 & 50+ achievement
+- **Session persistence**: menyimpan daftar skill/achievement yang sudah dicoba ke `token.json`
+- Tidak klaim ulang tiap restart (reset tiap 24 jam)
+
+### 📦 Other Claims
+- Daily reward, chore board, airdrop, reward box, mushroom, salt awakening
+
+---
+
+## 🏗️ Building & Upgrade
+
+### 🚰 Water Well
+- Auto build Lv1 & upgrade ke Lv2 (Lv5) / Lv3 (Lv11)
+- Koordinat cerdas: 7 alternatif jika koordinat bentrok
+- Auto speed up setelah upgrade
+
+### 🔧 Tools Craft
+- Auto craft Axe, Pickaxe, Rod (fishing)
+- Petting Hand & Salt Rake hanya di-craft saat Level 7+
+- Cooldown 5 menit antar craft
+
+### 🎣 Fishing
+- Auto cast (Earthworm) + reel dengan jeda
+- Leftover reel detection (tarik kail terlantar)
+- Rod auto-craft jika belum punya
+
+### ⚒️ Gathering
+- Auto chop wood & mine stone sesuai threshold
+- Threshold adaptif berdasarkan Water Well level
+
+---
+
+## 📦 Delivery & Trading
+
+### 🚚 Auto Delivery
+- Kirim pesanan saat semua item tersedia
+- Skip Blacksmith otomatis jika level < 7
+- Tracking completed orders
+
+### 💰 Smart Selling
+- Jual kelebihan crop dengan kalkulasi: stok - misi - masak - composter - buffer
+- Buffer minimal 5 unit per crop
+
+---
+
+## ⚙️ Technical
+
+### 🔐 Session Management
+- Multi-wallet via `sunflower.txt` + `sessions/token.json`
+- Token expired detection (401) → auto prompt input token baru
+- Time sync dengan server via Date header
+
+### 🔄 Resync
+- Auto resync maks 3x jika state berubah setelah autosave
+
+### 🛡️ Headers
+- Rotasi User-Agent per wallet
+- `curl_cffi` (TLS fingerprint) support dengan fallback ke standard `requests`
+
+---
+
+## 🌱 Supported
+
+**Crops:** Sunflower, Rhubarb, Carrot, Cabbage, Soybean, Corn, Wheat, Kale + 15 lainnya
+
+**Recipes:** Reindeer Carrot, Bumpkin Broth, Rhubarb Tart, Mashed Potato, Pumpkin Soup
+
+**Buildings:** Water Well, Fire Pit, Compost Bin, Basic Scarecrow
+
+---
+
 
 ## Akuisisi Produk:
 
