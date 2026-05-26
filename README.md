@@ -2,7 +2,7 @@
 
 Dokumen ini menyajikan gambaran umum mengenai **Sunflower Land Auto Bot**, sebuah solusi otomatisasi yang dirancang untuk mengoptimalkan pengelolaan pertanian virtual Anda di Sunflower Land. Bot ini dikembangkan untuk meningkatkan efisiensi operasional dan memaksimalkan progres dalam permainan melalui serangkaian fitur cerdas dan terotomatisasi.
 
-![Screenshot Operasional Bot](18.05.2026_15.36.26_REC.png)
+![Screenshot Operasional Bot](screenshoot.png)
 
 ---
 
